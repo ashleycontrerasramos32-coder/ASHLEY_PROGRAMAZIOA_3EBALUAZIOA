@@ -34,7 +34,11 @@ public class ariketa1 {
 		System.out.println("Hau da batezbestekoa: "+(batezbestekoa/zerrenda.size()));
 		System.out.println("Hau da maximoa: "+maximoa);
 		
-		
+		for(Integer in:zerrenda) { // FOR MEJORADO
+			System.out.println(in);
+			if(in>maximoa) maximoa=in;
+			batezbestekoa+=in;
+		}
 		
 		
 	}
