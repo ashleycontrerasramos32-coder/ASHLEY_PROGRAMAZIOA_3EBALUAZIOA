@@ -1,4 +1,4 @@
-package UD7;
+package ud6_2zatia;
 
 import java.util.Objects;
 
