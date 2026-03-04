@@ -80,13 +80,13 @@ public class Ikaslea {
 		
 		for(int i=0; i<notak.length; i++) {
 			if(notak[i]<5 ) {
-				System.out.println("Ez du dena gaindituta");
+				System.out.println(izena+ " ez du dena gaindituta");
 				return false;
 			}
 			
 		}
 		
-		System.out.println("Dena gaindituta");
+		System.out.println(izena+ " dena gaindituta");
 		return true; 
 	}
 

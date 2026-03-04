@@ -125,12 +125,24 @@ public class Ikasgela {
 	// nota guztiak gaindituta dituzteen ikasleen izenekin sortutuako ArrayList bat itzultzen duen metodoa
 	public ArrayList<String> guztiakGainditutakoIkasleak() {
 		ArrayList <String> guztiaGaindituta=new ArrayList<String>();
-		for(int i=0; i<zerrenda.size(); i++) {
+		/* for(int i=0; i<zerrenda.size(); i++) {
 			if(	zerrenda.get(i).guztiaGaindituta()) {
 				guztiaGaindituta.add(zerrenda.get(i).getIzena());
 			}
 		}
 		return guztiaGaindituta;
+		*/
+		
+		//Iterator erabiltzen
+		Iterator<Ikaslea> it=zerrenda.iterator();
+		while(it.hasNext()) {
+			Ikaslea ik=it.next();
+			if(ik.guztiaGaindituta()) {
+				guztiaGaindituta.add(ik.getIzena());
+			}
+		}
+		return guztiaGaindituta;
+		
 	}
 	
 	
@@ -148,12 +160,14 @@ public class Ikasgela {
 		
 		Ikasgela ig3=new Ikasgela("SMR1");
 		ig3.ikaselaGehitu(new Ikaslea ("David", 17,  new int[] {5,9,8,10,6}) );
+		
 		ig3.gelaIkusi();
 		System.out.println();
 		
 		ig3.ikasleaBadago(new Ikaslea ("Aitor", 17,  new int[] {5,9,8,10,6}) );
 		
 		ig3.nota5Gutxiago();
+		
 		System.out.println();
 		ig3.guztiakGainditutakoIkasleak();
 		
