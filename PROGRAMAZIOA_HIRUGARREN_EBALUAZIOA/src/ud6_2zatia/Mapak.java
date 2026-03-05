@@ -39,6 +39,7 @@ public class Mapak {
 		mapaIkusi(mapa3);
 		System.out.println("-----------");
 		Iterator<Integer> it1=mapa1.values().iterator();
+		//con este bucle vamos a recorrer solo LOS VALORES O LO QUE TENGAMOS, LAS CLAVES NO. 
 		while(it1.hasNext()) {
 			System.out.println(it1.next());
 		}

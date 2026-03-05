@@ -74,11 +74,13 @@ public class Ikasgela {
 		*/
 		
 		// equals metodoa birderfinitu 
-		// return zerrenda.contains(ik);
+		System.out.println(ik.getIzena()+" ikaslea badago");
+		return zerrenda.contains(ik);
 		
 		// beste modu batean
-		if(zerrenda.indexOf(ik)!=-1) return true;
+		/* if(zerrenda.indexOf(ik)!=-1) return true;
 		return false;
+		*/
 		
 		
 		
@@ -160,11 +162,13 @@ public class Ikasgela {
 		
 		Ikasgela ig3=new Ikasgela("SMR1");
 		ig3.ikaselaGehitu(new Ikaslea ("David", 17,  new int[] {5,9,8,10,6}) );
+		ig3.ikaselaGehitu(new Ikaslea ("Ashley", 19,  new int[] {6,5,5,6,5}) );
 		
 		ig3.gelaIkusi();
 		System.out.println();
 		
-		ig3.ikasleaBadago(new Ikaslea ("Aitor", 17,  new int[] {5,9,8,10,6}) );
+		ig3.ikasleaBadago(new Ikaslea ("David", 17,  new int[] {5,9,8,10,6}) );
+		System.out.println();
 		
 		ig3.nota5Gutxiago();
 		
