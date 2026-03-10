@@ -5,20 +5,21 @@ import java.util.Iterator;
 
 //ARIKETA 2
 
-public class Zerrenda {
+public class Sorta1_Ariketa2 {
 	
 	private ArrayList<Punto> zerrenda=new ArrayList<Punto>();
 	
-	public Zerrenda() {
+	public Sorta1_Ariketa2() {
 		zerrenda=new ArrayList<>();
 	
 		zerrenda.add(new Punto(-1, 2));
-		zerrenda.add(new Punto(6, 4));
-		zerrenda.add(new Punto(3, 6));
+		zerrenda.add(new Punto(1, 1));
+		zerrenda.add(new Punto(3, -6));
+		zerrenda.add(new Punto(9, 9));
 
 	}
 	
-	public  Zerrenda(ArrayList<Punto> zerrenda) {
+	public  Sorta1_Ariketa2(ArrayList<Punto> zerrenda) {
 		this.zerrenda=zerrenda;
 	}
 	
@@ -62,33 +63,34 @@ public class Zerrenda {
 		System.out.println("ArrayList-ak ez du (0,0)");
 	}
 	
-	public boolean puntuaDagoAlaEz(Punto p) {
+	public boolean puntua11Badago() {
 		
-		if(zerrenda.contains(p)) {
-			System.out.println("ArrayList (1,1) puntuan dago");
-			return true;
-		}
-		return false;
+		return zerrenda.contains(new Punto(1,1));
 	
 	}
+	public void distantzia10Ezabatu() {
+		for(int i=0; i<zerrenda.size();i++) {
+			Punto p=zerrenda.get(i);
+			if(Math.sqrt(p.getX()*p.getX()+p.getY()*p.getY())>10) {
+				zerrenda.remove(p);
+				return;
+			}
+		}
+	}
 	
-	public Punto ezabatuLaugarrenKoadrantekoPuntuak() {
+	public void ezabatuLaugarrenKoadrantekoPuntuak() {
 		Iterator<Punto> it=zerrenda.iterator();
 		while(it.hasNext()) {
 			Punto pun=it.next();
-			if(zerrenda.equals(pun.getX()>0 && pun.getY()<0)) {
-				zerrenda.clear();
-			}
+			if(pun.getX()>0 && pun.getY()<0) it.remove();
 		}
-		return null;
 	}
 	
 	
 	public static void main(String[] args) {
 		
-	Zerrenda z1=new Zerrenda();
+	Sorta1_Ariketa2 z1=new Sorta1_Ariketa2();
 	z1.bistaratu();
-
 	System.out.println();
 	System.out.println("Hau da zerrenda alderantzizko ordenan: "+z1.alderantzikoOrdenan());
 	System.out.println();
@@ -96,8 +98,13 @@ public class Zerrenda {
 	System.out.println();
 	z1.punto00();
 	System.out.println();
-	System.out.println(z1.puntuaDagoAlaEz(new Punto(1, 1)));
-	
+	System.out.println(z1.puntua11Badago());
+	System.out.println();
+	z1.distantzia10Ezabatu();
+	System.out.println(z1.zerrenda);
+	System.out.println();
+	z1.ezabatuLaugarrenKoadrantekoPuntuak();
+	System.out.println(z1.zerrenda);
 	}
  	
 	
