@@ -1,9 +1,17 @@
 package ud6_2zatia;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Objects;
 
-public class Ikaslea {
+public class Ikaslea implements Comparable <Ikaslea> {
 	
+	@Override
+	public String toString() {
+		return "Ikaslea [izena=" + izena + ", adina=" + adina + ", notak=" + Arrays.toString(notak) + "]";
+	}
+
 	private String izena;
 	private int adina;
 	private int [] notak;
@@ -23,10 +31,8 @@ public class Ikaslea {
 		System.out.println();
 	}
 	
-	public static void main(String[] args) {
-		Ikaslea ika=new Ikaslea("Asier", 22, new int[] {3,6,8,4,6});
-		ika.erakutsi();
-	}
+	
+	
 
 	public String getIzena() {
 		return izena;
@@ -89,9 +95,25 @@ public class Ikaslea {
 		System.out.println(izena+ " dena gaindituta");
 		return true; 
 	}
+	
+	@Override
+	public int compareTo(Ikaslea o) {
+		if(this.adina>o.adina) return 1;
+		if(this.adina<o.adina) return -1;
+		return 0;
+	}
+	
+	
+	public static void main(String[] args) {
+		ArrayList<Ikaslea> zerrenda=new ArrayList<Ikaslea>();
+		Ikaslea ik=new Ikaslea("Asier", 22, new int[] {3,6,8,4,6});
+		zerrenda.add(ik);
+		zerrenda.add(new Ikaslea("Jokin", 20, new int [] {3,5,7,4,6}));
+		zerrenda.add(new Ikaslea("Marta", 25, new int [] {6,6,8,6,6}));
+		System.out.println(zerrenda);
+		Collections.sort(zerrenda);
+		System.out.println(zerrenda);
 
-	
-	
-	
+	}
 
 }
