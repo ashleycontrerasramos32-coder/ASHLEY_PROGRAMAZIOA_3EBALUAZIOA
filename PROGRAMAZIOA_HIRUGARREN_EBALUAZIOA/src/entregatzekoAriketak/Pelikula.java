@@ -40,6 +40,30 @@ public class Pelikula {
 		Pelikula other = (Pelikula) obj;
 		return iraupena == other.iraupena && Objects.equals(izena, other.izena) && urtea == other.urtea;
 	}
+
+	public String getIzena() {
+		return izena;
+	}
+
+	public void setIzena(String izena) {
+		this.izena = izena;
+	}
+
+	public int getIraupena() {
+		return iraupena;
+	}
+
+	public void setIraupena(int iraupena) {
+		this.iraupena = iraupena;
+	}
+
+	public int getUrtea() {
+		return urtea;
+	}
+
+	public void setUrtea(int urtea) {
+		this.urtea = urtea;
+	}
 	
 	
 	

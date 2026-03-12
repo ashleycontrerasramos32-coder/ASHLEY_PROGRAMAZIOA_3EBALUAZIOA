@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Objects;
+import java.util.TreeSet;
 
 public class Ikaslea implements Comparable <Ikaslea> {
 	
@@ -95,24 +96,32 @@ public class Ikaslea implements Comparable <Ikaslea> {
 		System.out.println(izena+ " dena gaindituta");
 		return true; 
 	}
-	
+	/*
 	@Override
 	public int compareTo(Ikaslea o) {
 		if(this.adina>o.adina) return 1;
 		if(this.adina<o.adina) return -1;
 		return 0;
 	}
+	*/
+	
+	@Override
+	public int compareTo(Ikaslea o) {
+		if(this.izena.compareTo(o.izena)>0) return 1;
+		if(this.izena.compareTo(o.izena)<0) return -1;
+		return 0;
+	}
+	
 	
 	
 	public static void main(String[] args) {
-		ArrayList<Ikaslea> zerrenda=new ArrayList<Ikaslea>();
+		TreeSet<Ikaslea> zerrenda=new TreeSet<Ikaslea>();
 		Ikaslea ik=new Ikaslea("Asier", 22, new int[] {3,6,8,4,6});
 		zerrenda.add(ik);
 		zerrenda.add(new Ikaslea("Jokin", 20, new int [] {3,5,7,4,6}));
 		zerrenda.add(new Ikaslea("Marta", 25, new int [] {6,6,8,6,6}));
 		System.out.println(zerrenda);
-		Collections.sort(zerrenda);
-		System.out.println(zerrenda);
+	
 
 	}
 
