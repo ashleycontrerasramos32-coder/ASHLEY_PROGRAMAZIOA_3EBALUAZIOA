@@ -17,6 +17,36 @@ public class Pertsona implements Serializable {
 	}
 
 
+	public String getIzena() {
+		return izena;
+	}
+
+
+	public void setIzena(String izena) {
+		this.izena = izena;
+	}
+
+
+	public String getNAN() {
+		return NAN;
+	}
+
+
+	public void setNAN(String nAN) {
+		NAN = nAN;
+	}
+
+
+	public int getAdina() {
+		return adina;
+	}
+
+
+	public void setAdina(int adina) {
+		this.adina = adina;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Pertsona [izena=" + izena + ", NAN=" + NAN + ", adina=" + adina + "]";
