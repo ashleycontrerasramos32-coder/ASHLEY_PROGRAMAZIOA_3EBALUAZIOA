@@ -10,11 +10,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Reader;
 
 public class TestuFitxategitikPertsonak {
 	//TESTU FITXATEGITIK PERTSONAK SORTU ETA OBJEKTU FITXATEGIA SORTU
-	public static void testuFitxategitikObjektuFitxategira(String txtfitx, String objFitx) {
-		BufferedReader br=new BufferedReader(txtfitx);
+	public static void testuFitxategitikObjektuFitxategira(String txtFitx, String objFitx) throws FileNotFoundException, IOException {
+		BufferedReader br=new BufferedReader(new FileReader(txtFitx));
 		ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream(objFitx));
 		String lerroa=br.readLine();
 		while(lerroa!=null) {
@@ -33,7 +34,7 @@ public class TestuFitxategitikPertsonak {
 		br.close();
 		
 	}
-	
+	// OBJEKTU FITXATEGIA IRAKURRI
 	public static void objektuenFitxategiaIrakurri(String objFitx) throws FileNotFoundException, IOException, ClassNotFoundException {
 		ObjectInputStream ois=new ObjectInputStream(new FileInputStream(objFitx));
 		Pertsona p=(Pertsona) ois.readObject();
