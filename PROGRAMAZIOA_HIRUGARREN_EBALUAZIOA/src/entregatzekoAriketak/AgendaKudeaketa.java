@@ -94,7 +94,7 @@ public class AgendaKudeaketa {
 	}
 	
 	
-	
+	/*
 	public static void main(String[] args) throws IOException {
 		ikusi("PertsonakAgenda.txt");
 		gehituPertsona(new Pertsona("611058599", 18, "Ashley", "Vitoria-Gasteiz"));
@@ -102,7 +102,7 @@ public class AgendaKudeaketa {
 		ezabatuPertsona(new Pertsona("666555777", 25, "Juan", "Vitoria-Gasteiz"));
 	}
 	
-	
+	*/
 	
 
 }
